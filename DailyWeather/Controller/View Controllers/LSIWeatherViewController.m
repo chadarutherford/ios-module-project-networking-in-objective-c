@@ -8,8 +8,11 @@
 #import <CoreLocation/CoreLocation.h>
 #import "LSIWeatherViewController.h"
 #import "LSIWeatherIcons.h"
+#import "LSICardinalDirection.h"
 #import "LSIErrors.h"
 #import "LSILog.h"
+#import "LSIFileHelper.h"
+#import "CARCurrentForecast.h"
 
 @interface LSIWeatherViewController () {
     BOOL _requestedLocation;
@@ -19,12 +22,24 @@
 @property CLLocation *location;
 @property (nonatomic) CLPlacemark *placemark;
 
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *windLabel;
+@property (weak, nonatomic) IBOutlet UILabel *apparentTemperatureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pressureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *probabilityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *uvIndexLabel;
+
 @end
 
 // NOTE: You must declare the Category before the main implementation,
 // otherwise you'll see errors about the type not being correct if you
 // try to move delegate methods out of the main implementation body
 @interface LSIWeatherViewController (CLLocationManagerDelegate) <CLLocationManagerDelegate>
+
 
 @end
 
@@ -114,11 +129,23 @@
 - (void)requestWeatherForLocation:(CLLocation *)location {
     
     // TODO: 1. Parse CurrentWeather.json from App Bundle and update UI
-    
-    
-    
-    
+    NSData *weatherData = loadFile(@"CurrentWeather.json", [LSIWeatherViewController class]);
     // TODO: 2. Refactor and Parse Weather.json from App Bundle and update UI
+    NSError *jsonError = nil;
+    NSDictionary *weatherDictionary = [NSJSONSerialization JSONObjectWithData:weatherData options:0 error:&jsonError];
+    if (jsonError) {
+        NSLog(@"JSON Parsing Error %@", jsonError);
+    }
+    CARCurrentForecast *forecast = [[CARCurrentForecast alloc] initWithDictionary:weatherDictionary];
+    self.iconImageView.image = [LSIWeatherIcons weatherImageForIconName:forecast.icon];
+    self.summaryLabel.text = forecast.summary;
+    self.temperatureLabel.text = [NSString stringWithFormat:@"%0.0f°F", forecast.temperature];
+    self.windLabel.text = [NSString stringWithFormat:@"%@ %0.0f mph", [LSICardinalDirection directionForHeading:forecast.windBearing], forecast.windSpeed];
+    self.apparentTemperatureLabel.text = [NSString stringWithFormat:@"%0.0f°", forecast.apparentTemperature];
+    self.humidityLabel.text = [NSString stringWithFormat:@"%0.0f%%", forecast.humidity];
+    self.pressureLabel.text = [NSString stringWithFormat:@"%0.0f inHg", forecast.pressure];
+    self.probabilityLabel.text = [NSString stringWithFormat:@"%0.0f%%", forecast.percipProbability];
+    self.uvIndexLabel.text = [NSString stringWithFormat:@"%d", forecast.uvIndex];
 }
 
 - (void)updateViews {

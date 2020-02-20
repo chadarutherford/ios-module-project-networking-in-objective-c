@@ -21,7 +21,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6UL-WK-Urb">
                                         <rect key="frame" x="98" y="76" width="218.5" height="206"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clear-day" translatesAutoresizingMaskIntoConstraints="NO" id="vg9-wK-Yru">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fog" translatesAutoresizingMaskIntoConstraints="NO" id="vg9-wK-Yru">
                                                 <rect key="frame" x="77" y="0.0" width="64" height="64"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="64" id="Yvh-mI-lTd"/>
@@ -35,16 +35,16 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SVA-em-fSx">
-                                                <rect key="frame" x="40" y="97.5" width="138.5" height="108.5"/>
+                                                <rect key="frame" x="41" y="97.5" width="136.5" height="108.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeu-9v-bYg">
-                                                        <rect key="frame" x="49" y="0.0" width="40.5" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeu-9v-bYg">
+                                                        <rect key="frame" x="51.5" y="0.0" width="33.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="48° F" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiN-AO-K54">
-                                                        <rect key="frame" x="0.0" y="36.5" width="138.5" height="72"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="92° F" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiN-AO-K54">
+                                                        <rect key="frame" x="0.0" y="36.5" width="136.5" height="72"/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="60"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -165,7 +165,7 @@
                                                         <color key="textColor" white="0.79947024830000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Da-G0-QhT">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Da-G0-QhT">
                                                         <rect key="frame" x="0.0" y="16" width="61" height="33.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -211,6 +211,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="apparentTemperatureLabel" destination="eQe-NY-KDD" id="8bP-OB-cj7"/>
+                        <outlet property="humidityLabel" destination="fX3-Ma-A0i" id="64d-nu-Asj"/>
+                        <outlet property="iconImageView" destination="vg9-wK-Yru" id="4W0-ag-XQc"/>
+                        <outlet property="locationLabel" destination="XKt-RB-cwY" id="QfQ-Zg-ljR"/>
+                        <outlet property="pressureLabel" destination="zdn-iy-17j" id="DHX-p7-aH4"/>
+                        <outlet property="probabilityLabel" destination="VYw-n9-0WG" id="lZs-Y5-Non"/>
+                        <outlet property="summaryLabel" destination="xeu-9v-bYg" id="GAl-WA-Gti"/>
+                        <outlet property="temperatureLabel" destination="XiN-AO-K54" id="Irh-1h-dO3"/>
+                        <outlet property="uvIndexLabel" destination="5Da-G0-QhT" id="0fz-Gl-zGZ"/>
+                        <outlet property="windLabel" destination="uI8-hl-jNA" id="ZBK-aY-DWA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -295,7 +307,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="clear-day" width="130" height="130"/>
+        <image name="fog" width="130" height="130"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>

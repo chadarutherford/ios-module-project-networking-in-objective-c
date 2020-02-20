@@ -15,8 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSDate *time;
 @property (nonatomic, readonly, copy) NSString *summary;
 @property (nonatomic, readonly, copy) NSString *icon;
-@property (nonatomic, readonly) double precipProbability;
-@property (nonatomic, readonly) double precipIntensity;
+@property (nonatomic, readonly) double percipProbability;
+@property (nonatomic, readonly) double percipIntensity;
 @property (nonatomic, readonly) double temperature;
 @property (nonatomic, readonly) double apparentTemperature;
 @property (nonatomic, readonly) double humidity;
@@ -28,8 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype) initWithTime:(NSDate *)time
                       summary:(NSString *)summary
                          icon:(NSString *)icon
-            precipProbability:(double)precipProbability
-              precipIntensity:(double)precipIntensity
+            percipProbability:(double)percipProbability
+              percipIntensity:(double)percipIntensity
                   temperature:(double)temperature
           apparentTemperature:(double)apparentTemperature
                      humidity:(double)humidity

@@ -13,8 +13,8 @@
 - (instancetype) initWithTime:(NSDate *)time
                       summary:(NSString *)summary
                          icon:(NSString *)icon
-            precipProbability:(double)precipProbability
-              precipIntensity:(double)precipIntensity
+            percipProbability:(double)percipProbability
+              percipIntensity:(double)percipIntensity
                   temperature:(double)temperature
           apparentTemperature:(double)apparentTemperature
                      humidity:(double)humidity
@@ -27,8 +27,8 @@
         _time = time;
         _summary = [summary copy];
         _icon = [icon copy];
-        _precipProbability = precipProbability;
-        _precipIntensity = precipIntensity;
+        _percipProbability = percipProbability;
+        _percipIntensity = percipIntensity;
         _temperature = temperature;
         _apparentTemperature = apparentTemperature;
         _humidity = humidity;
@@ -45,8 +45,8 @@
     NSDate *time = [NSDate dateWithTimeIntervalSince1970:timeNumber.longValue / 1000.0];
     NSString *summary = dictionary[@"summary"];
     NSString *icon = dictionary[@"icon"];
-    NSNumber *precipProbability = dictionary[@"precipProbability"];
-    NSNumber *precipIntensity = dictionary[@"precipIntensity"];
+    NSNumber *percipProbability = dictionary[@"percipProbability"];
+    NSNumber *percipIntensity = dictionary[@"percipIntensity"];
     NSNumber *temperature = dictionary[@"temperature"];
     NSNumber *apparentTemperature = dictionary[@"apparentTemperature"];
     NSNumber *humidity = dictionary[@"humidity"];
@@ -58,8 +58,8 @@
     self = [self initWithTime:time
                       summary:summary
                          icon:icon
-            precipProbability:precipProbability.doubleValue
-              precipIntensity:precipIntensity.doubleValue
+            percipProbability:percipProbability.doubleValue
+              percipIntensity:percipIntensity.doubleValue
                   temperature:temperature.doubleValue
           apparentTemperature:apparentTemperature.doubleValue
                      humidity:humidity.doubleValue
