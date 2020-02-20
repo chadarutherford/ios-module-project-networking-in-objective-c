@@ -10,6 +10,7 @@
 #import "../DailyWeather/Support/LambdaSDK/LSIFileHelper.h"
 #import "../DailyWeather/Model/CARCurrentForecast.h"
 #import "../DailyWeather/Model/CARDailyForecast.h"
+#import "../DailyWeather/Model/CARHourlyForecast.h"
 
 @interface DailyWeatherTests : XCTestCase
 
@@ -76,7 +77,37 @@
 }
 
 - (void) testHourlyWeather {
+    NSData *weatherData = loadFile(@"HourlyWeather.json", [DailyWeatherTests class]);
+    NSError *jsonError = nil;
+    NSArray *weatherArray = [NSJSONSerialization JSONObjectWithData:weatherData options:0 error:&jsonError];
+    if (jsonError) {
+        NSLog(@"JSON Parsing Error %@", jsonError);
+    }
     
+    NSMutableArray *weatherObjects = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *dictionary in weatherArray) {
+        CARHourlyForecast *forecast = [[CARHourlyForecast alloc] initWithDictionary:dictionary];
+        [weatherObjects addObject:forecast];
+    }
+    
+    CARHourlyForecast *forecast = [weatherObjects objectAtIndex:0];
+    NSDate *time = [NSDate dateWithTimeIntervalSince1970:1581001200 / 1000.0];
+    XCTAssertNotNil(weatherObjects);
+    XCTAssertEqual(49, weatherObjects.count);
+    XCTAssertEqualObjects(time, forecast.time);
+    XCTAssertEqualObjects(@"Clear", forecast.summary);
+    XCTAssertEqualObjects(@"clear-night", forecast.icon);
+    XCTAssertEqualWithAccuracy(0.0, forecast.precipProbability, 0.001);
+    XCTAssertEqualWithAccuracy(0, forecast.precipIntensity, 0.001);
+    XCTAssertNil(forecast.precipType);
+    XCTAssertEqualWithAccuracy(47.68, forecast.temperature, 0.001);
+    XCTAssertEqualWithAccuracy(46.54, forecast.apparentTemperature, 0.001);
+    XCTAssertEqualWithAccuracy(0.78, forecast.humidity, 0.001);
+    XCTAssertEqualWithAccuracy(1022.8, forecast.pressure, 0.001);
+    XCTAssertEqualWithAccuracy(3.57, forecast.windSpeed, 0.001);
+    XCTAssertEqual(36, forecast.windBearing);
+    XCTAssertEqual(0, forecast.uvIndex);
 }
 
 @end
