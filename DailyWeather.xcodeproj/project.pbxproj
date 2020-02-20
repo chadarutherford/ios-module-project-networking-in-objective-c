@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		63FCC9B223FDE88900E66984 /* CARWeatherForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FCC9B123FDE88900E66984 /* CARWeatherForecast.m */; };
 		63FCC9B523FDEA6600E66984 /* CARCurrentForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FCC9B423FDEA6600E66984 /* CARCurrentForecast.m */; };
+		63FCC9B823FE044900E66984 /* CARDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FCC9B723FE044900E66984 /* CARDailyForecast.m */; };
 		BD69313723FD905200C0DF09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD69313623FD905200C0DF09 /* AppDelegate.m */; };
 		BD69313A23FD905200C0DF09 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD69313923FD905200C0DF09 /* SceneDelegate.m */; };
 		BD69314223FD905300C0DF09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD69314123FD905300C0DF09 /* Assets.xcassets */; };
@@ -52,6 +53,8 @@
 		63FCC9B123FDE88900E66984 /* CARWeatherForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARWeatherForecast.m; sourceTree = "<group>"; };
 		63FCC9B323FDEA6600E66984 /* CARCurrentForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARCurrentForecast.h; sourceTree = "<group>"; };
 		63FCC9B423FDEA6600E66984 /* CARCurrentForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARCurrentForecast.m; sourceTree = "<group>"; };
+		63FCC9B623FE044900E66984 /* CARDailyForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARDailyForecast.h; sourceTree = "<group>"; };
+		63FCC9B723FE044900E66984 /* CARDailyForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARDailyForecast.m; sourceTree = "<group>"; };
 		BD69313223FD905200C0DF09 /* DailyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD69313523FD905200C0DF09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BD69313623FD905200C0DF09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				63FCC9B123FDE88900E66984 /* CARWeatherForecast.m */,
 				63FCC9B323FDEA6600E66984 /* CARCurrentForecast.h */,
 				63FCC9B423FDEA6600E66984 /* CARCurrentForecast.m */,
+				63FCC9B623FE044900E66984 /* CARDailyForecast.h */,
+				63FCC9B723FE044900E66984 /* CARDailyForecast.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				BD69316523FD90D100C0DF09 /* LSIFileHelper.m in Sources */,
 				63FCC9B223FDE88900E66984 /* CARWeatherForecast.m in Sources */,
 				BD69316E23FD912000C0DF09 /* LSISettingsTableVC.m in Sources */,
+				63FCC9B823FE044900E66984 /* CARDailyForecast.m in Sources */,
 				BD69316723FD90D100C0DF09 /* LSILog.m in Sources */,
 				BD69313723FD905200C0DF09 /* AppDelegate.m in Sources */,
 				BDFC8F7223FD999000A39B21 /* LSICardinalDirection.m in Sources */,
