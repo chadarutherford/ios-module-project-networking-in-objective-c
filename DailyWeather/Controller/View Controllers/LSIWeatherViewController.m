@@ -13,6 +13,7 @@
 #import "LSILog.h"
 #import "LSIFileHelper.h"
 #import "CARCurrentForecast.h"
+#import "CARWeatherFetcher.h"
 
 @interface LSIWeatherViewController () {
     BOOL _requestedLocation;
@@ -21,6 +22,7 @@
 @property CLLocationManager *locationManager;
 @property CLLocation *location;
 @property (nonatomic) CLPlacemark *placemark;
+@property CARWeatherFetcher *weatherFetcher;
 
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
@@ -71,7 +73,6 @@
     self.locationManager.delegate = self;
     [self.locationManager requestWhenInUseAuthorization];
     [self.locationManager startUpdatingLocation];
-    
     // TODO: Transparent toolbar with info button (Settings)
     // TODO: Handle settings button pressed
 }
@@ -126,17 +127,8 @@
     }
 }
 
-- (void)requestWeatherForLocation:(CLLocation *)location {
-    
-    // TODO: 1. Parse CurrentWeather.json from App Bundle and update UI
-    NSData *weatherData = loadFile(@"CurrentWeather.json", [LSIWeatherViewController class]);
-    // TODO: 2. Refactor and Parse Weather.json from App Bundle and update UI
-    NSError *jsonError = nil;
-    NSDictionary *weatherDictionary = [NSJSONSerialization JSONObjectWithData:weatherData options:0 error:&jsonError];
-    if (jsonError) {
-        NSLog(@"JSON Parsing Error %@", jsonError);
-    }
-    CARCurrentForecast *forecast = [[CARCurrentForecast alloc] initWithDictionary:weatherDictionary];
+- (void)updateUIWithForecast:(CARCurrentForecast *)forecast {
+    self.locationLabel.text = self.placemark.name;
     self.iconImageView.image = [LSIWeatherIcons weatherImageForIconName:forecast.icon];
     self.summaryLabel.text = forecast.summary;
     self.temperatureLabel.text = [NSString stringWithFormat:@"%0.0f°F", forecast.temperature];
@@ -146,6 +138,20 @@
     self.pressureLabel.text = [NSString stringWithFormat:@"%0.0f inHg", forecast.pressure];
     self.probabilityLabel.text = [NSString stringWithFormat:@"%0.0f%%", forecast.percipProbability];
     self.uvIndexLabel.text = [NSString stringWithFormat:@"%d", forecast.uvIndex];
+}
+
+- (void)requestWeatherForLocation:(CLLocation *)location {
+    self.weatherFetcher = [[CARWeatherFetcher alloc] init];
+    [self.weatherFetcher fetchCurrentWeatherForLatitude:self.location.coordinate.latitude longitude:self.location.coordinate.longitude completion:^(CARCurrentForecast * _Nullable weather, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+            return;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+           [self updateUIWithForecast:weather];
+        });
+    }];
 }
 
 - (void)updateViews {

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63CDF21923FF2CFA00D86234 /* CARHourlyWeatherCollectionCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CDF21823FF2CFA00D86234 /* CARHourlyWeatherCollectionCollectionViewController.m */; };
+		63CDF21C23FF2D5B00D86234 /* CARHourlyWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CDF21B23FF2D5B00D86234 /* CARHourlyWeatherCollectionViewCell.m */; };
+		63CDF22023FF313C00D86234 /* CARDailyWeatherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CDF21F23FF313C00D86234 /* CARDailyWeatherTableViewCell.m */; };
+		63CDF22323FF315700D86234 /* CARDailyWeatherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CDF22223FF315700D86234 /* CARDailyWeatherTableViewController.m */; };
+		63CDF22623FF32CD00D86234 /* CARDayHourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CDF22523FF32CD00D86234 /* CARDayHourViewController.m */; };
+		63CDF22A23FF338400D86234 /* CARWeatherFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CDF22923FF338400D86234 /* CARWeatherFetcher.m */; };
 		63FCC9B223FDE88900E66984 /* CARWeatherForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FCC9B123FDE88900E66984 /* CARWeatherForecast.m */; };
 		63FCC9B523FDEA6600E66984 /* CARCurrentForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FCC9B423FDEA6600E66984 /* CARCurrentForecast.m */; };
 		63FCC9B823FE044900E66984 /* CARDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FCC9B723FE044900E66984 /* CARDailyForecast.m */; };
@@ -50,6 +56,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		63CDF21723FF2CFA00D86234 /* CARHourlyWeatherCollectionCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARHourlyWeatherCollectionCollectionViewController.h; sourceTree = "<group>"; };
+		63CDF21823FF2CFA00D86234 /* CARHourlyWeatherCollectionCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARHourlyWeatherCollectionCollectionViewController.m; sourceTree = "<group>"; };
+		63CDF21A23FF2D5B00D86234 /* CARHourlyWeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARHourlyWeatherCollectionViewCell.h; sourceTree = "<group>"; };
+		63CDF21B23FF2D5B00D86234 /* CARHourlyWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARHourlyWeatherCollectionViewCell.m; sourceTree = "<group>"; };
+		63CDF21E23FF313C00D86234 /* CARDailyWeatherTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARDailyWeatherTableViewCell.h; sourceTree = "<group>"; };
+		63CDF21F23FF313C00D86234 /* CARDailyWeatherTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARDailyWeatherTableViewCell.m; sourceTree = "<group>"; };
+		63CDF22123FF315700D86234 /* CARDailyWeatherTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARDailyWeatherTableViewController.h; sourceTree = "<group>"; };
+		63CDF22223FF315700D86234 /* CARDailyWeatherTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARDailyWeatherTableViewController.m; sourceTree = "<group>"; };
+		63CDF22423FF32CD00D86234 /* CARDayHourViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARDayHourViewController.h; sourceTree = "<group>"; };
+		63CDF22523FF32CD00D86234 /* CARDayHourViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARDayHourViewController.m; sourceTree = "<group>"; };
+		63CDF22823FF338400D86234 /* CARWeatherFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARWeatherFetcher.h; sourceTree = "<group>"; };
+		63CDF22923FF338400D86234 /* CARWeatherFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARWeatherFetcher.m; sourceTree = "<group>"; };
 		63FCC9B023FDE88900E66984 /* CARWeatherForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARWeatherForecast.h; sourceTree = "<group>"; };
 		63FCC9B123FDE88900E66984 /* CARWeatherForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARWeatherForecast.m; sourceTree = "<group>"; };
 		63FCC9B323FDEA6600E66984 /* CARCurrentForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARCurrentForecast.h; sourceTree = "<group>"; };
@@ -138,6 +156,7 @@
 		63AB5B1923FDD62C00B0F8EC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				63CDF21D23FF2D6000D86234 /* Cells */,
 				63AB5B1823FDD61A00B0F8EC /* Storyboards */,
 			);
 			path = View;
@@ -146,9 +165,30 @@
 		63AB5B1A23FDD63700B0F8EC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				63CDF22723FF336000D86234 /* Model Controller */,
 				BDFC8F6123FD94F600A39B21 /* View Controllers */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		63CDF21D23FF2D6000D86234 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				63CDF21A23FF2D5B00D86234 /* CARHourlyWeatherCollectionViewCell.h */,
+				63CDF21B23FF2D5B00D86234 /* CARHourlyWeatherCollectionViewCell.m */,
+				63CDF21E23FF313C00D86234 /* CARDailyWeatherTableViewCell.h */,
+				63CDF21F23FF313C00D86234 /* CARDailyWeatherTableViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		63CDF22723FF336000D86234 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				63CDF22823FF338400D86234 /* CARWeatherFetcher.h */,
+				63CDF22923FF338400D86234 /* CARWeatherFetcher.m */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 		63FCC9AF23FDE80000E66984 /* Model */ = {
@@ -224,6 +264,12 @@
 				BD69315D23FD907800C0DF09 /* LSIWeatherViewController.m */,
 				BD69316D23FD912000C0DF09 /* LSISettingsTableVC.h */,
 				BD69316C23FD912000C0DF09 /* LSISettingsTableVC.m */,
+				63CDF21723FF2CFA00D86234 /* CARHourlyWeatherCollectionCollectionViewController.h */,
+				63CDF21823FF2CFA00D86234 /* CARHourlyWeatherCollectionCollectionViewController.m */,
+				63CDF22123FF315700D86234 /* CARDailyWeatherTableViewController.h */,
+				63CDF22223FF315700D86234 /* CARDailyWeatherTableViewController.m */,
+				63CDF22423FF32CD00D86234 /* CARDayHourViewController.h */,
+				63CDF22523FF32CD00D86234 /* CARDayHourViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -361,19 +407,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD69316523FD90D100C0DF09 /* LSIFileHelper.m in Sources */,
+				63CDF21923FF2CFA00D86234 /* CARHourlyWeatherCollectionCollectionViewController.m in Sources */,
 				63FCC9B223FDE88900E66984 /* CARWeatherForecast.m in Sources */,
 				63FCC9BB23FE156100E66984 /* CARHourlyForecast.m in Sources */,
+				63CDF22023FF313C00D86234 /* CARDailyWeatherTableViewCell.m in Sources */,
 				BD69316E23FD912000C0DF09 /* LSISettingsTableVC.m in Sources */,
 				63FCC9B823FE044900E66984 /* CARDailyForecast.m in Sources */,
 				BD69316723FD90D100C0DF09 /* LSILog.m in Sources */,
 				BD69313723FD905200C0DF09 /* AppDelegate.m in Sources */,
+				63CDF22323FF315700D86234 /* CARDailyWeatherTableViewController.m in Sources */,
 				BDFC8F7223FD999000A39B21 /* LSICardinalDirection.m in Sources */,
 				BD69316923FD90D100C0DF09 /* LSIErrors.m in Sources */,
 				63FCC9B523FDEA6600E66984 /* CARCurrentForecast.m in Sources */,
+				63CDF22A23FF338400D86234 /* CARWeatherFetcher.m in Sources */,
+				63CDF22623FF32CD00D86234 /* CARDayHourViewController.m in Sources */,
 				BD69315E23FD907800C0DF09 /* LSIWeatherViewController.m in Sources */,
 				BD69317223FD918B00C0DF09 /* LSIWeatherIcons.m in Sources */,
 				BD69314823FD905300C0DF09 /* main.m in Sources */,
 				BD69313A23FD905200C0DF09 /* SceneDelegate.m in Sources */,
+				63CDF21C23FF2D5B00D86234 /* CARHourlyWeatherCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
